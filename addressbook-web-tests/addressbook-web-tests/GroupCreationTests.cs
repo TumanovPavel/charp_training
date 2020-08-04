@@ -44,7 +44,7 @@ namespace WebAddressbookTests
         public void GroupCreationTest()
         {
             OpenHomePage();
-            Login(new AccountData ("admin", "secret"));
+            Login(new AccountData("admin", "secret"));
             GoToGroupsPage();
             InitGroupCreation();
             GroupData group = new GroupData("Test1");

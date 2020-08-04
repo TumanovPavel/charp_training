@@ -8,7 +8,7 @@ namespace WebAddressbookTests
     {
         public string Username { set; get; }
         public string Password { set; get; }
-        public AccountData (string username, string password)
+        public AccountData(string username, string password)
         {
             this.Username = username;
             this.Password = password;
