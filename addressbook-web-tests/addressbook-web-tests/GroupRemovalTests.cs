@@ -2,27 +2,22 @@
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using WebAddressbookTests;
 using NUnit.Framework;
 
 namespace WebAddressbookTests
 {
     [TestFixture]
-    public class GroupCreationTests : TestBase
+    public class GroupRemovalTests : TestBase
     {
- 
+
         [Test]
-        public void GroupCreationTest()
+        public void GroupRemovalTest()
         {
             navigator.OpenHomePage();
             loginHelper.Login(new AccountData("admin", "secret"));
             navigator.GoToGroupsPage();
-            groupHelper.InitGroupCreation();
-            GroupData group = new GroupData("Test1");
-            group.Header = "q";
-            group.Footer = "q";
-            groupHelper.FillGroupForm(group);
-            groupHelper.SubmitGroupCreation();
+            groupHelper.SelectGroup(1);
+            groupHelper.RemuoveGroup();
             groupHelper.ReturnToGroupsPage();
             loginHelper.Logout();
         }

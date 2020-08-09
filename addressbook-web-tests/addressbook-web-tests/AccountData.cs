@@ -4,7 +4,7 @@ using System.Text;
 
 namespace WebAddressbookTests
 {
-    class AccountData
+    public class AccountData
     {
         public string Username { set; get; }
         public string Password { set; get; }

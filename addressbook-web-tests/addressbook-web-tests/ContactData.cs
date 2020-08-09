@@ -4,7 +4,7 @@ using System.Text;
 
 namespace WebAddressbookTests
 {
-    class ContactData
+    public class ContactData
     {
 
         public string FirstName { set; get; }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace WebAddressbookTests
 {
-    class GroupData
+    public class GroupData
     {
         private string header = "";
         private string footer = "";
