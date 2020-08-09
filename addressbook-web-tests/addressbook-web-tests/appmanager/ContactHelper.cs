@@ -9,18 +9,24 @@ using OpenQA.Selenium.Support.UI;
 
 namespace WebAddressbookTests
 {
-    public class ContactHelper
+    public class ContactHelper : HelperBase
     {
-        private IWebDriver driver;
-
-        public ContactHelper(IWebDriver driver)
+        public ContactHelper(ApplicationManager manager) : base(manager)
         {
-            this.driver = driver;
         }
 
         public void InitContactCreation()
         {
             driver.FindElement(By.LinkText("add new")).Click();
+        }
+
+        public ContactHelper Create(ContactData contact)
+        {
+            InitContactCreation();
+            FillContactForm(contact);
+            SubmitContactCreation();
+            ReturnToContactPage();
+            return this;
         }
 
         public void FillContactForm(ContactData contact)
