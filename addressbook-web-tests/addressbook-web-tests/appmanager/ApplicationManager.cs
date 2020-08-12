@@ -8,6 +8,7 @@ namespace WebAddressbookTests
     public class ApplicationManager
     {
         protected IWebDriver driver;
+        private StringBuilder verificationErrors;
         protected string baseURL;
 
         public LoginHelper Auth { get; }
