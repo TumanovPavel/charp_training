@@ -1,5 +1,4 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using NUnit.Framework;
@@ -7,13 +6,12 @@ using NUnit.Framework;
 namespace WebAddressbookTests
 {
     [TestFixture]
-    public class GroupRemovalTests : TestBase
+    public class ContactRemovalTests : TestBase
     {
-
         [Test]
-        public void GroupRemovalTest()
+        public void ContactRemovalTest()
         {
-            app.Groups.Remove(1);
+            app.Contacts.Remove();
         }
-  }
+    }
 }

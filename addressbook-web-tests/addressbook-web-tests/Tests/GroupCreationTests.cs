@@ -19,7 +19,6 @@ namespace WebAddressbookTests
             group.Footer = "q";
 
             app.Groups.Create(group);
-            app.Auth.Logout();
         }
 
         [Test]
@@ -30,7 +29,6 @@ namespace WebAddressbookTests
             group.Footer = "";
 
             app.Groups.Create(group);
-            app.Auth.Logout();
         }
     }
 }

@@ -1,24 +1,19 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium.Support.UI;
 
 namespace WebAddressbookTests
 {
     public class ApplicationManager
     {
         protected IWebDriver driver;
-        private StringBuilder verificationErrors;
         protected string baseURL;
 
-        protected LoginHelper loginHelper;
-        protected NavigationHelper navigator;
-        protected GroupHelper groupHelper;
-        protected ContactHelper contactHelper;
+        public LoginHelper Auth { get; }
+        public NavigationHelper Navigator { get; }
+        public GroupHelper Groups { get; }
+        public ContactHelper Contacts { get; }
 
         public ApplicationManager()
         {
@@ -26,10 +21,10 @@ namespace WebAddressbookTests
             baseURL = "http://localhost:8080";
             verificationErrors = new StringBuilder();
 
-            loginHelper = new LoginHelper(this);
-            navigator = new NavigationHelper(this, baseURL);
-            groupHelper = new GroupHelper(this);
-            contactHelper = new ContactHelper(this);
+            Auth = new LoginHelper(this);
+            Navigator = new NavigationHelper(this, baseURL);
+            Groups = new GroupHelper(this);
+            Contacts = new ContactHelper(this);
 
         }
         public IWebDriver Driver
@@ -53,36 +48,36 @@ namespace WebAddressbookTests
 
         }
 
-        public LoginHelper Auth
+/*        public LoginHelper Auth
         {
             get
             {
                 return loginHelper;
             }
-        }
+        }*/
 
-        public NavigationHelper Navigator
+        /*public NavigationHelper Navigator
         {
             get
             {
                 return navigator;
             }
-        }
+        }*/
 
-        public GroupHelper Groups
+       /* public GroupHelper Groups
         {
             get
             {
                 return groupHelper;
             }
-        }
-
+        }*/
+/*
         public ContactHelper Contacts
         {
             get
             {
                 return contactHelper;
             }
-        }
+        }*/
     }
 }
