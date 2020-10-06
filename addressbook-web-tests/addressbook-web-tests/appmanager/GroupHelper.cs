@@ -11,11 +11,19 @@ namespace WebAddressbookTests
 {
     public class GroupHelper : HelperBase
     {
+        
         public GroupHelper(ApplicationManager manager) : base(manager)
         {
         }
+/*        public List<GroupData> GetGroupList()
+        {
+            List<GroupData> groups = new List<GroupData>();
+            manager.Navigator.GoToGroupsPage();
+            ICollection<IWebElement> elements = driver.FindElements(By.CssSelector("span.group"));
 
-        public GroupHelper Create(GroupData group)
+            return groups;
+        }
+*/        public GroupHelper Create(GroupData group)
         {
             manager.Navigator.GoToGroupsPage();
             InitGroupCreation();
@@ -91,5 +99,8 @@ namespace WebAddressbookTests
             driver.FindElement(By.Name("edit")).Click();
             return this;
         }
+
+        public bool GroupIsPresent()
+            => IsElementPresent(By.ClassName("group"));
     }
 }

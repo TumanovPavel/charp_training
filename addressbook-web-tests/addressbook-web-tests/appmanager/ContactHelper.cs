@@ -87,5 +87,8 @@ namespace WebAddressbookTests
             driver.FindElement(By.XPath("//img[@alt='Edit']")).Click();
             return this;
         }
+
+        public bool ContactIsPresent()
+            => IsElementPresent(By.Name("selected[]"));
     }
 }

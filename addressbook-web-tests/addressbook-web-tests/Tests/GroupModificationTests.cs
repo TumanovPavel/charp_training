@@ -1,9 +1,4 @@
-﻿using System;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading;
-using NUnit.Framework;
-using OpenQA.Selenium;
+﻿using NUnit.Framework;
 
 namespace WebAddressbookTests
 {
@@ -13,7 +8,7 @@ namespace WebAddressbookTests
         [Test]
         public void GroupModificationTest()
         {
-            if (!IsElementPresent(By.ClassName("group")))
+            if (!app.Groups.GroupIsPresent())
                 app.Groups.Create(new GroupData("Test1"));
 
             GroupData newData = new GroupData("zzz");

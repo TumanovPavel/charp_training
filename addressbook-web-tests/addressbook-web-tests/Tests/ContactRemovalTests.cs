@@ -1,8 +1,4 @@
-﻿using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading;
-using NUnit.Framework;
-using OpenQA.Selenium;
+﻿using NUnit.Framework;
 
 namespace WebAddressbookTests
 {
@@ -12,7 +8,7 @@ namespace WebAddressbookTests
         [Test]
         public void ContactRemovalTest()
         {
-            if (!IsElementPresent(By.Name("selected[]")))
+            if (!app.Contacts.ContactIsPresent())
                 app.Contacts.Create(new ContactData("TestName"));
             
             app.Contacts.Remove();
