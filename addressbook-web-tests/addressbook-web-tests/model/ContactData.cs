@@ -4,7 +4,7 @@ using System.Text;
 
 namespace WebAddressbookTests
 {
-    public class ContactData
+    public class ContactData : IEquatable <ContactData>, IComparable<ContactData>
     {
 
         public string FirstName { set; get; }
@@ -14,6 +14,36 @@ namespace WebAddressbookTests
         public ContactData(string firstName)
         {
             FirstName = firstName;
+        }
+
+        public ContactData(string firstName, string lastName)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+        }
+
+        public bool Equals(ContactData other)
+        {
+            if (Object.ReferenceEquals(other, null))
+                return false;
+            if (Object.ReferenceEquals(this, other))
+                return true;
+            return FirstName == other.FirstName && LastName == other.LastName;
+        }
+
+        public override int GetHashCode()
+            => FirstName.GetHashCode();
+
+        public int CompareTo(ContactData other)
+        {
+            if (Object.ReferenceEquals(other, null))
+                return 1;
+            return LastName.CompareTo(other.LastName);
+        }
+
+        public override string ToString()
+        {
+            return "LastName = " + LastName + "FirstName = " + FirstName;
         }
     }
 }

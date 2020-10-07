@@ -1,8 +1,5 @@
-﻿using System;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading;
-using NUnit.Framework;
+﻿using NUnit.Framework;
+using System.Collections.Generic;
 
 namespace WebAddressbookTests
 {
@@ -13,9 +10,17 @@ namespace WebAddressbookTests
         [Test]
         public void ContactCreationTest()
         {
-            ContactData contact = new ContactData("TestName");
-            contact.LastName = "Test Last Name";
+            ContactData newContact = new ContactData("TestName");
+            newContact.LastName = "Test Last Name";
+            List<ContactData> oldContacts = app.Contacts.GetContactList();
 
-            app.Contacts.Create(contact);        }
+            app.Contacts.Create(newContact);
+
+            List<ContactData> newContacts = app.Contacts.GetContactList();
+            oldContacts.Add(newContact);
+            oldContacts.Sort();
+            newContacts.Sort();
+            Assert.AreEqual(oldContacts, newContacts);
+        }
     }
 }
