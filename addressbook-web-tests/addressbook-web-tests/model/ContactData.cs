@@ -10,6 +10,7 @@ namespace WebAddressbookTests
         public string FirstName { set; get; }
 
         public string LastName { set; get; }
+        public string Id { set; get; }
 
         public ContactData(string firstName)
         {

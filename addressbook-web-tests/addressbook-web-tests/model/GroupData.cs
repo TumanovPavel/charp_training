@@ -6,35 +6,13 @@ namespace WebAddressbookTests
 {
     public class GroupData : IEquatable<GroupData>, IComparable<GroupData>
     {
-        private string header = "";
-        private string footer = "";
+        public string Header  { set; get; }
+        public string Footer  { set; get; }
         public string Name { set; get; }
+        public string Id { set; get; }
         public GroupData(string name)
         {
             this.Name = name;
-        }
-
-        public string Header
-        {
-            get
-            {
-                return header;
-            }
-            set
-            {
-                header = value;
-            }
-        }
-        public string Footer
-        {
-            get
-            {
-                return footer;
-            }
-            set
-            {
-                footer = value;
-            }
         }
 
         public bool Equals(GroupData other)
