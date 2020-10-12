@@ -39,8 +39,8 @@ namespace WebAddressbookTests
             if (Object.ReferenceEquals(other, null))
                 return 1;
             if (LastName.CompareTo(other.LastName) == 0)
-                return LastName.CompareTo(other.FirstName);
-            return FirstName.CompareTo(other.LastName);
+                return FirstName.CompareTo(other.FirstName);
+            return LastName.CompareTo(other.LastName);
         }
 
         public override string ToString()
